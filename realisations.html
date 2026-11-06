@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Réalisations - Thomas L.</title>
+<meta name="description" content="Réalisations professionnelles et en formation de Thomas L., BTS SIO SISR.">
+<meta name="author" content="Thomas L.">
+<meta name="theme-color" content="#0B0E14">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/vendor.css">
+<link rel="stylesheet" href="css/banniere.css">
+<link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="head">
+  <a href="index.html" class="brand" aria-label="Thomas L., accueil">
+    <span class="brand-mark"><img width="48" height="30" src="img/logo-onde.png" alt=""></span>
+    <span>Thomas <span class="brand-it">L.</span></span>
+  </a>
+  <div class="head-right">
+    <span class="status"><span class="dot" aria-hidden="true"></span>BTS SIO SISR</span>
+    <button type="button" class="pill-btn" id="menu-open" aria-expanded="false" aria-controls="menu"><span class="menu-lines" aria-hidden="true"><span></span><span></span></span>Menu</button>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-top">
+    <span class="brand"><span class="brand-mark"><img width="48" height="30" src="img/logo-onde.png" alt=""></span><span>Thomas <span class="brand-it">L.</span></span></span>
+    <button type="button" class="pill-btn" id="menu-close"><i class="ph-light ph-x" aria-hidden="true"></i>Fermer</button>
+  </div>
+  <nav class="menu-nav" aria-label="Navigation principale">
+    <ol>
+      <li><a href="index.html" style="--i:0">Accueil</a></li>
+      <li><a href="index.html#competences" style="--i:1">Compétences</a></li>
+      <li><a href="realisations.html" style="--i:2">Réalisations</a></li>
+      <li><a href="index.html#parcours" style="--i:3">Parcours</a></li>
+    </ol>
+  </nav>
+  <div class="menu-foot">
+    <a href="https://github.com/333cra/portfolio" target="_blank" rel="noopener">Code du site sur GitHub</a>
+    <span>BTS SIO SISR - EFREI</span>
+  </div>
+</div>
+
+<main id="main">
+<span id="top"></span>
+<section class="pf-banner" aria-labelledby="page-title">
+  <canvas id="wave" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="pf-crumbs"><a href="index.html">Accueil</a> / Réalisations</p>
+    <h1 id="page-title">Mes <em>réalisations.</em></h1>
+    <p>Des projets faits en cours, en entreprise et en freelance. Pour les missions chez des clients, je ne donne pas leur nom.</p>
+  </div>
+</section>
+
+<section class="pf-sec" aria-label="Liste des réalisations" style="padding-top:clamp(40px,5vw,64px)">
+  <div class="wrap">
+    <div class="pf-filters" role="group" aria-label="Filtrer les réalisations">
+      <button type="button" class="pf-filter" data-filter="tout" aria-pressed="true">Tout</button>
+      <button type="button" class="pf-filter" data-filter="bts" aria-pressed="false">BTS SIO</button>
+      <button type="button" class="pf-filter" data-filter="pro" aria-pressed="false">En entreprise</button>
+      <button type="button" class="pf-filter" data-filter="free" aria-pressed="false">Freelance</button>
+    </div>
+    <div class="pf-grid">
+      <article class="pf-card rv" data-cat="bts">
+        <div class="top"><i class="ph-light ph-hard-drives" aria-hidden="true"></i><span class="pf-badge bts">BTS SIO</span></div>
+        <h2>Déploiement d'Apache, MariaDB et GLPI</h2>
+        <p>Sur une VM Debian, j'ai installé Apache, un site statique dans son hôte virtuel, PHP, MariaDB et l'outil de tickets GLPI pour une PME fictive. Tout est testé avec un plan de 8 tests et documenté.</p>
+        <ul class="pf-chips" translate="no"><li>Debian</li><li>Apache</li><li>MariaDB</li><li>GLPI</li></ul>
+        <a class="go" href="realisation-glpi.html">Voir la fiche →</a>
+      </article>
+      <article class="pf-card rv" data-cat="bts">
+        <div class="top"><i class="ph-light ph-code" aria-hidden="true"></i><span class="pf-badge bts">BTS SIO</span></div>
+        <h2>Ce portfolio</h2>
+        <p>Écrit en HTML, CSS et un peu de JavaScript. La bannière reprend l'onde de mon site pro. Versionné avec Git et publié sur GitHub Pages.</p>
+        <ul class="pf-chips" translate="no"><li>HTML</li><li>CSS</li><li>Git</li><li>GitHub Pages</li></ul>
+        <a class="go" href="https://github.com/333cra/portfolio" target="_blank" rel="noopener">Voir le code →</a>
+      </article>
+      <article class="pf-card rv" data-cat="pro">
+        <div class="top"><i class="ph-light ph-device-mobile" aria-hidden="true"></i><span class="pf-badge pro">En entreprise</span></div>
+        <h2>Passage des postes en Full Intune avec Autopilot</h2>
+        <p>Je travaille sur le passage d'un parc d'environ 100 postes à Microsoft Intune. J'ai préparé des postes avec Autopilot, cherché la cause d'erreurs d'enrôlement, mis en place des scripts PowerShell (par exemple la liste des applis de chaque poste) et rédigé les procédures. On a aussi corrigé un réglage qui rendait les utilisateurs admin de leur poste. En cours.</p>
+        <ul class="pf-chips" translate="no"><li>Intune</li><li>Autopilot</li><li>Entra ID</li><li>PowerShell</li></ul>
+        
+      </article>
+      <article class="pf-card rv" data-cat="pro">
+        <div class="top"><i class="ph-light ph-network" aria-hidden="true"></i><span class="pf-badge pro">En entreprise</span></div>
+        <h2>Panne réseau sur un plateau TV</h2>
+        <p>Après un changement de réseau, les écrans d'un plateau TV ne se synchronisaient plus. J'ai scanné le VLAN, testé les ports et comparé les tracert depuis plusieurs postes. Ça a montré que le nouveau pare-feu du prestataire laissait seulement passer le port 443 et le NTP. Je lui ai envoyé les preuves, il a ajouté la règle et tout remarche.</p>
+        <ul class="pf-chips" translate="no"><li>VLAN</li><li>Ports</li><li>tracert</li><li>PowerShell</li></ul>
+        
+      </article>
+      <article class="pf-card rv" data-cat="pro">
+        <div class="top"><i class="ph-light ph-shield-check" aria-hidden="true"></i><span class="pf-badge pro">En entreprise</span></div>
+        <h2>Mises à jour automatiques avec NinjaOne</h2>
+        <p>Pendant le test de NinjaOne avant achat, j'ai choisi les postes les plus à risque puis mis en place un script qui met à jour les logiciels avec WinGet deux fois par jour. Résultat : environ 350 failles en moins par poste après la mise à jour de Chrome, et 17 postes couverts. J'ai aussi ajouté une alerte sur l'expiration du certificat SSL du site.</p>
+        <ul class="pf-chips" translate="no"><li>NinjaOne</li><li>WinGet</li><li>PowerShell</li><li>Defender</li></ul>
+        
+      </article>
+      <article class="pf-card rv" data-cat="pro">
+        <div class="top"><i class="ph-light ph-headset" aria-hidden="true"></i><span class="pf-badge pro">En entreprise</span></div>
+        <h2>Ticket : des mails qui disparaissent dans Outlook</h2>
+        <p>Un utilisateur ne retrouvait plus ses mails avec pièce jointe dans le nouvel Outlook. J'ai vérifié côté serveur avec le suivi des messages, retrouvé son poste dans Defender, puis lancé à distance un script Intune qui remet à zéro le cache d'Outlook sans rien supprimer. Le script a bien tourné, j'attends le retour de l'utilisateur pour confirmer.</p>
+        <ul class="pf-chips" translate="no"><li>Exchange Online</li><li>Defender</li><li>Intune</li><li>Graph</li></ul>
+        
+      </article>
+      <article class="pf-card rv" data-cat="free">
+        <div class="top"><i class="ph-light ph-headset" aria-hidden="true"></i><span class="pf-badge free">Freelance</span></div>
+        <h2>Informatique d'une PME de 20 personnes</h2>
+        <p>Je suis l'interlocuteur informatique d'une PME qui n'a pas de service IT : support aux utilisateurs, postes, comptes et accès, sécurité. En cours.</p>
+        <ul class="pf-chips" translate="no"><li>Support N1/N2</li><li>Postes</li><li>Comptes</li></ul>
+        
+      </article>
+      <article class="pf-card rv" data-cat="free">
+        <div class="top"><i class="ph-light ph-cube" aria-hidden="true"></i><span class="pf-badge free">Freelance</span></div>
+        <h2>Serveur Proxmox avec services séparés</h2>
+        <p>Plusieurs services sur une seule machine, chacun dans son conteneur. L'administration passe uniquement par un réseau privé, avec des accès par clé SSH.</p>
+        <ul class="pf-chips" translate="no"><li>Proxmox VE</li><li>LXC</li><li>SSH</li></ul>
+        
+      </article>
+      <article class="pf-card rv" data-cat="free">
+        <div class="top"><i class="ph-light ph-wall" aria-hidden="true"></i><span class="pf-badge free">Freelance</span></div>
+        <h2>Serveur Debian sécurisé et messagerie</h2>
+        <p>Pare-feu en refus par défaut avec nftables. Pour les mails, j'ai mis en place SPF, DKIM et DMARC petit à petit, en lisant les rapports pendant un mois avant de durcir.</p>
+        <ul class="pf-chips" translate="no"><li>Debian</li><li>nftables</li><li>SPF / DKIM / DMARC</li></ul>
+        
+      </article>
+      <article class="pf-card rv" data-cat="free">
+        <div class="top"><i class="ph-light ph-code" aria-hidden="true"></i><span class="pf-badge free">Freelance</span></div>
+        <h2>Automatisation de tâches d'une TPE</h2>
+        <p>Sept tâches répétitives automatisées en Python (veille, relève de mails, rappels d'échéances), avec des tests. Rien d'important ne part sans validation humaine.</p>
+        <ul class="pf-chips" translate="no"><li>Python</li><li>Tests</li><li>RGPD</li></ul>
+        
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pf-foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Thomas L. · BTS SIO SISR</span>
+    <nav aria-label="Liens du pied de page">
+      <ul>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="https://github.com/333cra/portfolio" target="_blank" rel="noopener">Code sur GitHub<span class="vh"> (nouvel onglet)</span></a></li>
+      </ul>
+    </nav>
+    <a href="#top" class="up">Haut de page <i class="ph-light ph-arrow-up" aria-hidden="true"></i></a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fiche : déploiement GLPI - Thomas L.</title>
+<meta name="description" content="Fiche réalisation : déploiement d'Apache, MariaDB et GLPI sur Debian.">
+<meta name="author" content="Thomas L.">
+<meta name="theme-color" content="#0B0E14">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/vendor.css">
+<link rel="stylesheet" href="css/banniere.css">
+<link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="head">
+  <a href="index.html" class="brand" aria-label="Thomas L., accueil">
+    <span class="brand-mark"><img width="48" height="30" src="img/logo-onde.png" alt=""></span>
+    <span>Thomas <span class="brand-it">L.</span></span>
+  </a>
+  <div class="head-right">
+    <span class="status"><span class="dot" aria-hidden="true"></span>BTS SIO SISR</span>
+    <button type="button" class="pill-btn" id="menu-open" aria-expanded="false" aria-controls="menu"><span class="menu-lines" aria-hidden="true"><span></span><span></span></span>Menu</button>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-top">
+    <span class="brand"><span class="brand-mark"><img width="48" height="30" src="img/logo-onde.png" alt=""></span><span>Thomas <span class="brand-it">L.</span></span></span>
+    <button type="button" class="pill-btn" id="menu-close"><i class="ph-light ph-x" aria-hidden="true"></i>Fermer</button>
+  </div>
+  <nav class="menu-nav" aria-label="Navigation principale">
+    <ol>
+      <li><a href="index.html" style="--i:0">Accueil</a></li>
+      <li><a href="index.html#competences" style="--i:1">Compétences</a></li>
+      <li><a href="realisations.html" style="--i:2">Réalisations</a></li>
+      <li><a href="index.html#parcours" style="--i:3">Parcours</a></li>
+    </ol>
+  </nav>
+  <div class="menu-foot">
+    <a href="https://github.com/333cra/portfolio" target="_blank" rel="noopener">Code du site sur GitHub</a>
+    <span>BTS SIO SISR - EFREI</span>
+  </div>
+</div>
+
+<main id="main">
+<span id="top"></span>
+<section class="pf-banner" aria-labelledby="page-title">
+  <canvas id="wave" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="pf-crumbs"><a href="index.html">Accueil</a> / <a href="realisations.html">Réalisations</a> / GLPI</p>
+    <h1 id="page-title">Déploiement d'Apache, MariaDB <em>et GLPI.</em></h1>
+    <p>Un serveur Debian avec un site web et l'outil de tickets GLPI, installé brique par brique et testé à chaque étape.</p>
+  </div>
+</section>
+
+<section class="pf-sec" style="padding-top:clamp(48px,6vw,80px)">
+  <div class="wrap pf-layout">
+    <aside class="pf-aside" aria-label="Fiche technique">
+      <dl>
+        <div><dt>Cadre</dt><dd>BTS SIO SISR, 1re année</dd></div>
+        <div><dt>Compétence</dt><dd>C17 - Déployer un service</dd></div>
+        <div><dt>Date</dt><dd>Novembre 2026</dd></div>
+        <div><dt>Environnement</dt><dd>VM Debian 13 sous Hyper-V</dd></div>
+        <div><dt>Résultat</dt><dd class="ok">8 tests sur 8 OK</dd></div>
+      </dl>
+      <nav aria-label="Sommaire de la fiche">
+        <p>Sommaire</p>
+        <a href="#contexte">Contexte</a>
+        <a href="#actions">Ce que j'ai fait</a>
+        <a href="#resultat">Résultat</a>
+        <a href="#appris">Ce que j'ai appris</a>
+        <a href="#preuves">Preuves</a>
+      </nav>
+    </aside>
+    <div class="pf-doc">
+      <h2 id="contexte">Contexte</h2>
+      <p>Karim, responsable d'une petite entreprise (Atelier Numérique, 6 personnes), vient d'acheter un serveur. Il veut un site d'accueil et un outil pour suivre les pannes de ses collègues, qui notent aujourd'hui leurs demandes sur papier. Il n'y a pas de service informatique : je devais tout installer, tester et lui laisser une documentation.</p>
+
+      <h2 id="actions">Ce que j'ai fait</h2>
+      <ol class="pf-steps">
+        <li>Installé Apache sur une VM Debian 13 et vérifié qu'il répond.</li>
+        <li>Récupéré le site de Karim avec Git et créé un hôte virtuel <code>atelier.local</code>.</li>
+        <li>Installé PHP et ses extensions, testé avec une page <code>phpinfo()</code> que j'ai supprimée ensuite.</li>
+        <li>Installé et sécurisé MariaDB, créé la base <code>glpi</code> et un utilisateur qui n'a des droits que sur cette base.</li>
+        <li>Installé GLPI 12 dans son propre hôte virtuel <code>glpi.local</code>, changé les mots de passe par défaut et supprimé le script d'installation.</li>
+        <li>Écrit un plan de 8 tests et un dossier d'installation pour que quelqu'un d'autre puisse reprendre le serveur.</li>
+      </ol>
+      <ul class="pf-chips" translate="no"><li>Debian 13</li><li>Hyper-V</li><li>Apache 2.4</li><li>PHP 8.4</li><li>MariaDB 11.8</li><li>GLPI 12</li><li>Git</li><li>SSH</li></ul>
+
+      <h2 id="resultat">Résultat</h2>
+      <p>Le site et GLPI marchent sur le même serveur, chacun avec son nom. Karim a un dossier d'installation qui explique où sont les fichiers, comment vérifier les services et quoi faire en cas de problème.</p>
+      <div class="pf-table">
+        <table>
+          <thead><tr><th>Service</th><th>Action</th><th>Résultat obtenu</th><th>Statut</th></tr></thead>
+          <tbody>
+            <tr><td>Apache</td><td><code>apachectl configtest</code></td><td>Syntax OK</td><td class="ok">OK</td></tr>
+            <tr><td>MariaDB</td><td>Connexion avec glpi_user</td><td>Connexion réussie</td><td class="ok">OK</td></tr>
+            <tr><td>GLPI</td><td>Ouvrir http://glpi.local</td><td>Page de connexion affichée</td><td class="ok">OK</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="appris">Ce que j'ai appris</h2>
+      <p>Avancer brique par brique et tester à chaque fois, ça évite de chercher une panne au milieu de tout. J'ai aussi appliqué le moindre privilège sur la base de données et j'ai noté les problèmes rencontrés (sudo absent, message AH00558 d'Apache) avec leur solution.</p>
+
+      <h2 id="preuves">Preuves</h2>
+      <div class="pf-gallery">
+        <figure>
+          <img src="img/atelier-site.png" alt="Le site Atelier Numérique affiché sur atelier.local, avec le pied de page personnalisé (mon nom est flouté)" width="1920" height="1200" loading="lazy">
+          <figcaption>Le site statique servi par l'hôte virtuel atelier.local.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/glpi-connexion.png" alt="Page de connexion de GLPI sur glpi.local" width="1920" height="1200" loading="lazy">
+          <figcaption>La page de connexion de GLPI sur son hôte virtuel.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/glpi-tableau-de-bord.png" alt="Tableau de bord de GLPI après connexion" width="1920" height="1200" loading="lazy">
+          <figcaption>Le tableau de bord de GLPI après connexion avec le compte administrateur.</figcaption>
+        </figure>
+      </div>
+      <p><a href="realisations.html">← Retour aux réalisations</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pf-foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Thomas L. · BTS SIO SISR</span>
+    <nav aria-label="Liens du pied de page">
+      <ul>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="https://github.com/333cra/portfolio" target="_blank" rel="noopener">Code sur GitHub<span class="vh"> (nouvel onglet)</span></a></li>
+      </ul>
+    </nav>
+    <a href="#top" class="up">Haut de page <i class="ph-light ph-arrow-up" aria-hidden="true"></i></a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
