@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arborescence du portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fff; color: #111; margin: 40px; }
+    h1 { font-size: 26px; margin-bottom: 4px; }
+    p { color: #555; margin-top: 0; }
+    .arbre { display: flex; flex-direction: column; align-items: center; margin-top: 40px; }
+    .page { border: 2px solid #111; border-radius: 8px; padding: 12px 18px; text-align: center; background: #fff; min-width: 170px; }
+    .page small { display: block; color: #666; font-family: monospace; margin-top: 4px; }
+    .accueil { background: #e3f4ea; border-color: #2f8f5b; }
+    .trait { width: 2px; height: 30px; background: #111; }
+    .niveau { display: flex; gap: 30px; border-top: 2px solid #111; padding-top: 30px; position: relative; }
+    .colonne { display: flex; flex-direction: column; align-items: center; }
+    .note { margin-top: 40px; font-size: 14px; color: #444; }
+  </style>
+</head>
+<body>
+  <h1>Arborescence de mon portfolio</h1>
+  <p>Thomas L. - BTS SIO SISR</p>
+
+  <div class="arbre">
+    <div class="page accueil">Accueil<small>index.html</small></div>
+    <div class="trait"></div>
+    <div class="niveau">
+      <div class="colonne">
+        <div class="page">Réalisations<small>realisations.html</small></div>
+        <div class="trait"></div>
+        <div class="page">Fiche : déploiement GLPI<small>realisation-glpi.html</small></div>
+      </div>
+      <div class="colonne">
+        <div class="page">Mentions légales<br>+ crédits images<small>mentions-legales.html</small></div>
+      </div>
+      <div class="colonne">
+        <div class="page">Confidentialité (RGPD)<small>confidentialite.html</small></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">
+    Sur l'accueil : présentation, compétences, parcours et contact.<br>
+    Le menu (Accueil, Réalisations) est sur toutes les pages. Les mentions légales et la confidentialité sont dans le pied de page.<br>
+    Dossiers : <code>css/</code> (style.css), <code>img/</code> (captures), <code>fonts/</code> (police), <code>maquette/</code> (arborescence, wireframe, maquette).
+  </p>
+</body>
+</html>

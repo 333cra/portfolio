@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireframe et maquette - Portfolio</title>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; src: url("../fonts/bricolage-grotesque.woff2") format("woff2"); font-weight: 400 800; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 30px; background: #fafafa; color: #111; }
+    h1 { margin-top: 0; }
+    h2 { margin-top: 50px; border-bottom: 2px solid #111; padding-bottom: 6px; }
+    .ligne { display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-start; }
+    .legende { font-size: 14px; color: #555; }
+
+    /* Wireframe : que des blocs gris */
+    .wf { background: #fff; border: 2px solid #333; padding: 14px; }
+    .wf-desktop { width: 620px; }
+    .wf-mobile { width: 230px; }
+    .bloc { background: #d6d6d6; border: 1px dashed #777; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #333; text-align: center; padding: 6px; }
+    .wf-header { display: flex; gap: 10px; }
+    .wf-header .bloc { flex: 1; height: 34px; }
+    .wf-header .logo { flex: 0 0 120px; }
+    .grille3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .grille3 .bloc { height: 70px; }
+
+    /* Maquette : la version en couleur */
+    .mq { width: 620px; background: #0b0e14; color: #e7ecf3; font-family: "Bricolage Grotesque", Arial, sans-serif; border-radius: 10px; overflow: hidden; }
+    .mq-header { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid #1f2633; font-weight: 700; }
+    .mq-header nav { font-weight: 400; font-size: 14px; color: #9aa4b5; display: flex; gap: 16px; }
+    .mq-hero { padding: 30px 20px; }
+    .mq-hero .tag { font-family: monospace; font-size: 12px; color: #3fae74; }
+    .mq-hero h3 { font-size: 34px; line-height: 1.05; margin: 8px 0; }
+    .mq-hero h3 span { color: #3fae74; }
+    .mq-hero p { color: #9aa4b5; font-size: 14px; }
+    .bouton { display: inline-block; background: #e7ecf3; color: #0b0e14; padding: 8px 14px; border-radius: 20px; font-size: 13px; }
+    .mq-cartes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0 20px 24px; }
+    .mq-cartes div { background: #131924; border: 1px solid #1f2633; border-radius: 8px; padding: 12px; font-size: 13px; }
+    .mq-cartes b { display: block; margin-bottom: 4px; }
+    .palette { display: flex; gap: 10px; }
+    .couleur { width: 90px; font-size: 12px; text-align: center; }
+    .couleur div { height: 50px; border-radius: 6px; border: 1px solid #ccc; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Wireframe et maquette de la page d'accueil</h1>
+  <p class="legende">Portfolio de Thomas L. - BTS SIO SISR</p>
+
+  <h2>1. Inspiration</h2>
+  <p>Je me suis inspiré de mon site pro :</p>
+  <ul>
+    <li>fond sombre et une seule couleur d'accent (vert) pour que ce soit lisible et pas chargé ;</li>
+    <li>un gros titre en haut avec un mot en couleur ;</li>
+    <li>des petites cartes pour les compétences et les réalisations ;</li>
+    <li>des étiquettes (tags) pour les outils utilisés.</li>
+  </ul>
+  <p>Pour le portfolio je fais plus simple : pas d'animation, juste du HTML et du CSS.</p>
+
+  <h2>2. Wireframe (structure)</h2>
+  <div class="ligne">
+    <div>
+      <p class="legende">Ordinateur</p>
+      <div class="wf wf-desktop">
+        <div class="wf-header"><div class="bloc logo">Logo / nom</div><div class="bloc">Menu : Accueil - Réalisations</div></div>
+        <div class="bloc" style="height:110px">Titre h1 (mon nom) + phrase de présentation + bouton « Voir mes réalisations »</div>
+        <div class="bloc" style="height:50px">À propos</div>
+        <div class="grille3"><div class="bloc">Compétence</div><div class="bloc">Compétence</div><div class="bloc">Compétence</div></div>
+        <div class="bloc" style="height:60px">Parcours (liste par année)</div>
+        <div class="bloc" style="height:40px">Contact</div>
+        <div class="bloc" style="height:30px">Pied de page : mentions légales - confidentialité</div>
+      </div>
+    </div>
+    <div>
+      <p class="legende">Téléphone</p>
+      <div class="wf wf-mobile">
+        <div class="bloc" style="height:30px">Nom</div>
+        <div class="bloc" style="height:30px">Menu</div>
+        <div class="bloc" style="height:110px">Titre h1 + présentation + bouton</div>
+        <div class="bloc" style="height:40px">À propos</div>
+        <div class="bloc" style="height:40px">Compétence</div>
+        <div class="bloc" style="height:40px">Compétence</div>
+        <div class="bloc" style="height:40px">Compétence</div>
+        <div class="bloc" style="height:50px">Parcours</div>
+        <div class="bloc" style="height:40px">Contact</div>
+        <div class="bloc" style="height:30px">Pied de page</div>
+      </div>
+    </div>
+  </div>
+  <p class="legende">Sur téléphone, les cartes passent les unes sous les autres.</p>
+
+  <h2>3. Maquette (couleurs et typo)</h2>
+  <div class="ligne">
+    <div class="mq">
+      <div class="mq-header"><span>Thomas L.</span><nav><span>Accueil</span><span>Réalisations</span></nav></div>
+      <div class="mq-hero">
+        <div class="tag">● BTS SIO SISR - EFREI</div>
+        <h3>Thomas<br><span>L.</span></h3>
+        <p>Étudiant en BTS SIO option réseaux, technicien informatique.</p>
+        <span class="bouton">Voir mes réalisations →</span>
+      </div>
+      <div class="mq-cartes">
+        <div><b>Systèmes</b>Windows Server, AD, Debian</div>
+        <div><b>Réseaux</b>VLAN, pfSense, VPN</div>
+        <div><b>Cloud</b>Azure, Intune, M365</div>
+      </div>
+    </div>
+    <div>
+      <p><b>Couleurs</b></p>
+      <div class="palette">
+        <div class="couleur"><div style="background:#0b0e14"></div>#0b0e14<br>fond</div>
+        <div class="couleur"><div style="background:#131924"></div>#131924<br>cartes</div>
+        <div class="couleur"><div style="background:#e7ecf3"></div>#e7ecf3<br>texte</div>
+        <div class="couleur"><div style="background:#3fae74"></div>#3fae74<br>accent</div>
+      </div>
+      <p><b>Police</b> : Bricolage Grotesque (titres et texte), monospace pour les petites étiquettes.</p>
+    </div>
+  </div>
+</body>
+</html>
