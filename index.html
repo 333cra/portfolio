@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Thomas L. - Portfolio BTS SIO SISR</title>
+<meta name="description" content="Portfolio de Thomas L., étudiant en BTS SIO option SISR à l'EFREI et technicien informatique.">
+<meta name="author" content="Thomas L.">
+<meta name="theme-color" content="#0B0E14">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/vendor.css">
+<link rel="stylesheet" href="css/banniere.css">
+<link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="head">
+  <a href="#top" class="brand" aria-label="Thomas L., accueil">
+    <span class="brand-mark"><img width="48" height="30" src="img/logo-onde.png" alt=""></span>
+    <span>Thomas <span class="brand-it">L.</span></span>
+  </a>
+  <div class="head-right">
+    <span class="status"><span class="dot" aria-hidden="true"></span>BTS SIO SISR</span>
+    <button type="button" class="pill-btn" id="menu-open" aria-expanded="false" aria-controls="menu"><span class="menu-lines" aria-hidden="true"><span></span><span></span></span>Menu</button>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-top">
+    <span class="brand"><span class="brand-mark"><img width="48" height="30" src="img/logo-onde.png" alt=""></span><span>Thomas <span class="brand-it">L.</span></span></span>
+    <button type="button" class="pill-btn" id="menu-close"><i class="ph-light ph-x" aria-hidden="true"></i>Fermer</button>
+  </div>
+  <nav class="menu-nav" aria-label="Navigation principale">
+    <ol>
+      <li><a href="#top" style="--i:0">Accueil</a></li>
+      <li><a href="#competences" style="--i:1">Compétences</a></li>
+      <li><a href="realisations.html" style="--i:2">Réalisations</a></li>
+      <li><a href="#parcours" style="--i:3">Parcours</a></li>
+    </ol>
+  </nav>
+  <div class="menu-foot">
+    <a href="https://github.com/333cra/portfolio" target="_blank" rel="noopener">Code du site sur GitHub</a>
+    <span>BTS SIO SISR - EFREI</span>
+  </div>
+</div>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ============ BANNIÈRE (reprise de mon site pro) ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <canvas id="wave" aria-hidden="true"></canvas>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <h1 id="hero-title" class="hero-title">
+      <span class="ln"><span style="--i:0">Thomas</span></span>
+      <span class="ln"><span style="--i:1" class="g">L.</span></span>
+      <span class="ln"><span style="--i:2">Étudiant</span></span>
+      <span class="ln"><span style="--i:3" class="m">BTS SIO SISR.</span></span>
+    </h1>
+    <div class="hero-bottom hero-fade">
+      <p class="hero-sub">Je suis <strong>Thomas</strong>, étudiant en BTS SIO option réseaux à l'EFREI et technicien informatique. J'aime quand une infra est propre, documentée et que tout le monde peut la reprendre.</p>
+      <div class="hero-cta">
+        <a href="realisations.html" class="btn magnetic">Voir mes réalisations<span class="ico" aria-hidden="true"><i class="ph-light ph-arrow-right"></i></span></a>
+        <a href="#competences" class="btn ghost">Mes compétences</a>
+      </div>
+    </div>
+    <dl class="spec hero-fade">
+      <div><dt>Formation</dt><dd>BTS SIO <span class="g">SISR</span></dd></div>
+      <div><dt>École</dt><dd>EFREI</dd></div>
+      <div><dt>Poste</dt><dd>Technicien informatique</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ QUI JE SUIS ============ -->
+<section class="pf-sec" id="profil" aria-labelledby="profil-title">
+  <div class="wrap pf-intro">
+    <div class="pf-text rv">
+      <span class="pf-kicker">Qui je suis</span>
+      <h2 class="pf-title" id="profil-title">Étudiant le jour, <em>technicien aussi.</em></h2>
+      <p>Je suis en première année de <strong>BTS SIO option SISR</strong> à l'EFREI. En parallèle je travaille comme <strong>technicien informatique au CCCA-BTP</strong> depuis 2025.</p>
+      <p>En ce moment je travaille surtout sur <strong>Microsoft Intune</strong> : la migration d'un parc d'environ 100 postes. J'ai aussi une petite activité de <strong>freelance</strong> pour aider des entreprises sur leur informatique.</p>
+    </div>
+    <div class="pf-term rv" style="--d:1" aria-label="Mon profil en résumé">
+      <div class="pf-term-bar" aria-hidden="true"><i></i><i></i><i></i><span>thomas@portfolio: ~</span></div>
+<pre><span class="p">$</span> whoami
+<span class="v">Thomas L.</span>
+
+<span class="p">$</span> cat profil.txt
+<span class="k">formation </span> <span class="v">BTS SIO option SISR</span>
+<span class="k">école     </span> <span class="v">EFREI</span>
+<span class="k">poste     </span> <span class="v">Technicien informatique</span>
+<span class="k">freelance </span> <span class="v">oui, en plus du BTS</span>
+
+<span class="p">$</span> <span class="cur" aria-hidden="true"></span></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPÉTENCES ============ -->
+<section class="pf-sec" id="competences" aria-labelledby="comp-title" style="padding-top:0">
+  <div class="wrap">
+    <span class="pf-kicker rv">Compétences</span>
+    <h2 class="pf-title rv" id="comp-title">Ce que je sais faire, <em>en six domaines.</em></h2>
+    <div class="pf-bento">
+      <article class="pf-tile rv wide">
+        <span class="num">01</span>
+        <i class="ph-light ph-hard-drives ico" aria-hidden="true"></i>
+        <h3>Systèmes</h3>
+        <p>Windows Server et Linux, Active Directory et GPO, virtualisation. J'ai par exemple monté un serveur Debian avec Apache, MariaDB et GLPI.</p>
+        <ul class="pf-chips" translate="no"><li>AD DS & GPO</li><li>Debian</li><li>Hyper-V / Proxmox</li></ul>
+      </article>
+      <article class="pf-tile rv">
+        <span class="num">02</span>
+        <i class="ph-light ph-network ico" aria-hidden="true"></i>
+        <h3>Réseaux</h3>
+        <p>VLAN, routage, VPN, WiFi. Je sais lire un schéma réseau et chercher d'où vient une panne.</p>
+        <ul class="pf-chips" translate="no"><li>VLAN</li><li>pfSense</li><li>UniFi</li></ul>
+      </article>
+      <article class="pf-tile rv">
+        <span class="num">03</span>
+        <i class="ph-light ph-shield-check ico" aria-hidden="true"></i>
+        <h3>Sécurité</h3>
+        <p>Pare-feu, MFA, moindre privilège, mails protégés avec SPF, DKIM et DMARC.</p>
+        <ul class="pf-chips" translate="no"><li>Pare-feu</li><li>MFA</li><li>DMARC</li></ul>
+      </article>
+      <article class="pf-tile rv">
+        <span class="num">04</span>
+        <i class="ph-light ph-headset ico" aria-hidden="true"></i>
+        <h3>Support N1 / N2</h3>
+        <p>Aide aux utilisateurs, préparation des postes, comptes et accès, suivi des demandes par tickets.</p>
+        <ul class="pf-chips" translate="no"><li>Windows 11</li><li>Autopilot</li><li>GLPI</li></ul>
+      </article>
+      <article class="pf-tile rv">
+        <span class="num">05</span>
+        <i class="ph-light ph-code ico" aria-hidden="true"></i>
+        <h3>Services web et scripts</h3>
+        <p>Apache, PHP et MariaDB pour héberger un site ou un outil. Scripts PowerShell, Python et Bash pour les tâches répétitives.</p>
+        <ul class="pf-chips" translate="no"><li>Apache / PHP</li><li>PowerShell</li><li>Python</li></ul>
+      </article>
+      <article class="pf-tile rv wide">
+        <span class="num">06</span>
+        <i class="ph-light ph-cloud ico" aria-hidden="true"></i>
+        <h3>Cloud Microsoft</h3>
+        <p>Azure, Entra ID, Microsoft 365 et surtout Intune, que j'utilise tous les jours au travail.</p>
+        <ul class="pf-chips" translate="no"><li>Intune</li><li>Entra ID</li><li>Microsoft 365</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTILS ============ -->
+<section class="pf-sec" id="outils" aria-labelledby="outils-title" style="padding-top:0">
+  <div class="wrap">
+    <span class="pf-kicker rv">Outils</span>
+    <h2 class="pf-title rv" id="outils-title">Mon clavier <em>de tous les jours.</em></h2>
+    <div class="pf-keys-group rv">
+      <h3>Cloud et identité</h3>
+      <ul class="pf-keys" translate="no"><li class="pf-key"><i class="devicon-azure-plain colored" aria-hidden="true"></i>Azure</li><li class="pf-key"><i class="devicon-azure-plain colored" aria-hidden="true"></i>Entra ID</li><li class="pf-key"><i class="devicon-windows8-original colored" aria-hidden="true"></i>Microsoft 365</li><li class="pf-key"><i class="ph-light ph-device-mobile" aria-hidden="true"></i>Intune</li></ul>
+    </div>
+    <div class="pf-keys-group rv">
+      <h3>Systèmes et réseau</h3>
+      <ul class="pf-keys" translate="no"><li class="pf-key"><i class="devicon-windows8-original colored" aria-hidden="true"></i>Windows Server</li><li class="pf-key"><i class="ph-light ph-tree-structure" aria-hidden="true"></i>Active Directory</li><li class="pf-key"><i class="devicon-linux-plain" aria-hidden="true"></i>Debian / Ubuntu</li><li class="pf-key"><i class="ph-light ph-cube" aria-hidden="true"></i>Proxmox</li><li class="pf-key"><i class="ph-light ph-wall" aria-hidden="true"></i>pfSense</li><li class="pf-key"><i class="ph-light ph-network" aria-hidden="true"></i>VLAN</li></ul>
+    </div>
+    <div class="pf-keys-group rv">
+      <h3>Web et scripts</h3>
+      <ul class="pf-keys" translate="no"><li class="pf-key"><i class="ph-light ph-hard-drives" aria-hidden="true"></i>Apache / MariaDB</li><li class="pf-key"><i class="devicon-powershell-plain colored" aria-hidden="true"></i>PowerShell</li><li class="pf-key"><i class="devicon-python-plain colored" aria-hidden="true"></i>Python</li><li class="pf-key"><i class="devicon-bash-plain" aria-hidden="true"></i>Bash</li><li class="pf-key"><i class="devicon-github-original" aria-hidden="true"></i>Git / GitHub</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RÉALISATIONS ============ -->
+<section class="pf-sec" id="realisations" aria-labelledby="real-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="pf-head">
+      <div>
+        <span class="pf-kicker rv">Réalisations</span>
+        <h2 class="pf-title rv" id="real-title">Ce que j'ai <em>vraiment fait.</em></h2>
+      </div>
+      <div class="pf-rail-nav">
+        <button type="button" class="pf-round" data-rail-prev aria-label="Réalisation précédente"><i class="ph-light ph-arrow-right" style="transform:rotate(180deg)" aria-hidden="true"></i></button>
+        <button type="button" class="pf-round" data-rail-next aria-label="Réalisation suivante"><i class="ph-light ph-arrow-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+    <div class="pf-rail" tabindex="0" aria-label="Mes réalisations, faire défiler sur le côté">
+      <a class="pf-shot" href="realisation-glpi.html">
+        <span class="big" aria-hidden="true">01</span>
+        <span class="cat">BTS SIO</span>
+        <h3>Déploiement d'Apache, MariaDB et GLPI</h3>
+        <p>Sur une VM Debian, j'ai installé Apache, un site statique dans son hôte virtuel, PHP, MariaDB et l'outil de tickets GLPI pour une PME fictive. Tout est testé avec un plan de 8 tests et documenté.</p>
+        <span class="go">Voir la fiche <i class="ph-light ph-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="pf-shot" href="https://github.com/333cra/portfolio" target="_blank" rel="noopener">
+        <span class="big" aria-hidden="true">02</span>
+        <span class="cat">BTS SIO</span>
+        <h3>Ce portfolio</h3>
+        <p>Écrit en HTML, CSS et un peu de JavaScript. La bannière reprend l'onde de mon site pro. Versionné avec Git et publié sur GitHub Pages.</p>
+        <span class="go">Voir le code <i class="ph-light ph-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="pf-shot" href="realisations.html">
+        <span class="big" aria-hidden="true">03</span>
+        <span class="cat">En entreprise</span>
+        <h3>Passage des postes en Full Intune avec Autopilot</h3>
+        <p>Je travaille sur le passage d'un parc d'environ 100 postes à Microsoft Intune. J'ai préparé des postes avec Autopilot, cherché la cause d'erreurs d'enrôlement, mis en place des scripts PowerShell (par exemple la liste des applis de chaque poste) et rédigé les procédures. On a aussi corrigé un réglage qui rendait les utilisateurs admin de leur poste. En cours.</p>
+        <span class="go">Voir les réalisations <i class="ph-light ph-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="pf-shot" href="realisations.html">
+        <span class="big" aria-hidden="true">04</span>
+        <span class="cat">En entreprise</span>
+        <h3>Panne réseau sur un plateau TV</h3>
+        <p>Après un changement de réseau, les écrans d'un plateau TV ne se synchronisaient plus. J'ai scanné le VLAN, testé les ports et comparé les tracert depuis plusieurs postes. Ça a montré que le nouveau pare-feu du prestataire laissait seulement passer le port 443 et le NTP. Je lui ai envoyé les preuves, il a ajouté la règle et tout remarche.</p>
+        <span class="go">Voir les réalisations <i class="ph-light ph-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="pf-shot" href="realisations.html">
+        <span class="big" aria-hidden="true">05</span>
+        <span class="cat">En entreprise</span>
+        <h3>Mises à jour automatiques avec NinjaOne</h3>
+        <p>Pendant le test de NinjaOne avant achat, j'ai choisi les postes les plus à risque puis mis en place un script qui met à jour les logiciels avec WinGet deux fois par jour. Résultat : environ 350 failles en moins par poste après la mise à jour de Chrome, et 17 postes couverts. J'ai aussi ajouté une alerte sur l'expiration du certificat SSL du site.</p>
+        <span class="go">Voir les réalisations <i class="ph-light ph-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="pf-shot" href="realisations.html">
+        <span class="big" aria-hidden="true">06</span>
+        <span class="cat">En entreprise</span>
+        <h3>Ticket : des mails qui disparaissent dans Outlook</h3>
+        <p>Un utilisateur ne retrouvait plus ses mails avec pièce jointe dans le nouvel Outlook. J'ai vérifié côté serveur avec le suivi des messages, retrouvé son poste dans Defender, puis lancé à distance un script Intune qui remet à zéro le cache d'Outlook sans rien supprimer. Le script a bien tourné, j'attends le retour de l'utilisateur pour confirmer.</p>
+        <span class="go">Voir les réalisations <i class="ph-light ph-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="pf-shot" href="realisations.html">
+        <span class="big" aria-hidden="true">07</span>
+        <span class="cat">Freelance</span>
+        <h3>Informatique d'une PME de 20 personnes</h3>
+        <p>Je suis l'interlocuteur informatique d'une PME qui n'a pas de service IT : support aux utilisateurs, postes, comptes et accès, sécurité. En cours.</p>
+        <span class="go">Voir les réalisations <i class="ph-light ph-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="pf-shot" href="realisations.html">
+        <span class="big" aria-hidden="true">08</span>
+        <span class="cat">Freelance</span>
+        <h3>Serveur Proxmox avec services séparés</h3>
+        <p>Plusieurs services sur une seule machine, chacun dans son conteneur. L'administration passe uniquement par un réseau privé, avec des accès par clé SSH.</p>
+        <span class="go">Voir les réalisations <i class="ph-light ph-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="pf-shot" href="realisations.html">
+        <span class="big" aria-hidden="true">09</span>
+        <span class="cat">Freelance</span>
+        <h3>Serveur Debian sécurisé et messagerie</h3>
+        <p>Pare-feu en refus par défaut avec nftables. Pour les mails, j'ai mis en place SPF, DKIM et DMARC petit à petit, en lisant les rapports pendant un mois avant de durcir.</p>
+        <span class="go">Voir les réalisations <i class="ph-light ph-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="pf-shot" href="realisations.html">
+        <span class="big" aria-hidden="true">10</span>
+        <span class="cat">Freelance</span>
+        <h3>Automatisation de tâches d'une TPE</h3>
+        <p>Sept tâches répétitives automatisées en Python (veille, relève de mails, rappels d'échéances), avec des tests. Rien d'important ne part sans validation humaine.</p>
+        <span class="go">Voir les réalisations <i class="ph-light ph-arrow-right" aria-hidden="true"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARCOURS ============ -->
+<section class="pf-sec" id="parcours" aria-labelledby="parcours-title" style="padding-top:0">
+  <div class="wrap">
+    <span class="pf-kicker rv">Parcours</span>
+    <h2 class="pf-title rv" id="parcours-title">D'où je viens, <em>où j'en suis.</em></h2>
+    <ol class="pf-timeline">
+      <li class="pf-step rv">
+        <span class="when">2026</span>
+        <div class="what"><h3>Activité de freelance</h3><p>Administrateur systèmes et réseaux en freelance, pour les petites entreprises.</p><span class="tag">Freelance</span></div>
+      </li>
+      <li class="pf-step rv">
+        <span class="when">2026</span>
+        <div class="what"><h3>Formations Azure et Intune</h3><p>Administration cloud, gestion des postes et des mobiles.</p><span class="tag">Formation</span></div>
+      </li>
+      <li class="pf-step rv">
+        <span class="when">2025</span>
+        <div class="what"><h3>CCCA-BTP</h3><p>Technicien informatique : postes, Intune, support aux utilisateurs.</p><span class="tag">Entreprise</span></div>
+      </li>
+      <li class="pf-step rv">
+        <span class="when">En cours</span>
+        <div class="what"><h3>EFREI - BTS SIO SISR</h3><p>Services informatiques aux organisations, option systèmes et réseaux.</p><span class="tag">École</span></div>
+      </li>
+      <li class="pf-step rv">
+        <span class="when">2022</span>
+        <div class="what"><h3>Groupe BPCE</h3><p>Stage support IT : postes, utilisateurs, réseau.</p><span class="tag">Stage</span></div>
+      </li>
+    </ol>
+    <ul class="pf-ways rv">
+      <li><b>Tester chaque étape</b><span>J'avance brique par brique et je vérifie avant de passer à la suite.</span></li>
+      <li><b>Tout documenter</b><span>Une procédure, un schéma, les problèmes rencontrés et leur solution.</span></li>
+      <li><b>Le moindre privilège</b><span>Chaque compte et chaque service n'a que les droits dont il a besoin.</span></li>
+      <li><b>Demander avant d'agir</b><span>Pas d'action risquée sur un poste ou un serveur sans accord.</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="pf-foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Thomas L. · BTS SIO SISR</span>
+    <nav aria-label="Liens du pied de page">
+      <ul>
+        <li><a href="realisations.html">Réalisations</a></li>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="https://github.com/333cra/portfolio" target="_blank" rel="noopener">Code sur GitHub<span class="vh"> (nouvel onglet)</span></a></li>
+      </ul>
+    </nav>
+    <a href="#top" class="up">Haut de page <i class="ph-light ph-arrow-up" aria-hidden="true"></i></a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
