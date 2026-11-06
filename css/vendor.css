@@ -1,0 +1,179 @@
+/* Bricolage Grotesque (variable opsz 12-96, wght 400-800) et JetBrains Mono,
+   servies depuis ce domaine (SIL OFL 1.1). Source : Google Fonts. */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 400 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/BricolageGrotesque-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 400 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/BricolageGrotesque-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/JetBrainsMono-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/JetBrainsMono-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/JetBrainsMono-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/JetBrainsMono-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Phosphor Icons Light 2.1.1 (MIT), sous-ensemble */
+@font-face {
+  font-family: "Phosphor-Light";
+  src: url("../vendor/Phosphor-Light-sub.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.ph-light {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "Phosphor-Light" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ph-light.ph-arrow-right:before {
+  content: "\e06c";
+}
+.ph-light.ph-arrow-up:before {
+  content: "\e08e";
+}
+.ph-light.ph-arrow-up-right:before {
+  content: "\e092";
+}
+.ph-light.ph-arrows-clockwise:before {
+  content: "\e094";
+}
+.ph-light.ph-check:before {
+  content: "\e182";
+}
+.ph-light.ph-cloud:before {
+  content: "\e1aa";
+}
+.ph-light.ph-code:before {
+  content: "\e1bc";
+}
+.ph-light.ph-cube:before {
+  content: "\e1da";
+}
+.ph-light.ph-device-mobile:before {
+  content: "\e1e0";
+}
+.ph-light.ph-file-text:before {
+  content: "\e23a";
+}
+.ph-light.ph-hard-drives:before {
+  content: "\e2a0";
+}
+.ph-light.ph-headset:before {
+  content: "\e584";
+}
+.ph-light.ph-lock-key:before {
+  content: "\e2fe";
+}
+.ph-light.ph-magnifying-glass:before {
+  content: "\e30c";
+}
+.ph-light.ph-network:before {
+  content: "\edde";
+}
+.ph-light.ph-paper-plane-tilt:before {
+  content: "\e398";
+}
+.ph-light.ph-pause:before {
+  content: "\e39e";
+}
+.ph-light.ph-play:before {
+  content: "\e3d0";
+}
+.ph-light.ph-shield-check:before {
+  content: "\e40c";
+}
+.ph-light.ph-shield-checkered:before {
+  content: "\e708";
+}
+.ph-light.ph-timer:before {
+  content: "\e492";
+}
+.ph-light.ph-tree-structure:before {
+  content: "\e67c";
+}
+.ph-light.ph-wall:before {
+  content: "\e688";
+}
+.ph-light.ph-warning-circle:before {
+  content: "\e4e2";
+}
+.ph-light.ph-wrench:before {
+  content: "\e5d4";
+}
+.ph-light.ph-x:before {
+  content: "\e4f6";
+}
+/* Devicon 2.16.0 (MIT), sous-ensemble */
+@font-face{font-family:"devicon";src:url("../vendor/devicon-sub.woff2") format("woff2");font-weight:normal;font-style:normal;font-display:block}
+[class^=devicon-],[class*=" devicon-"]{font-family:"devicon" !important;speak:never;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.devicon-azure-plain:before{content:""}
+.devicon-bash-plain:before{content:""}
+.devicon-github-original:before{content:""}
+.devicon-linux-plain:before{content:""}
+.devicon-powershell-plain:before{content:""}
+.devicon-python-plain:before{content:""}
+.devicon-windows8-original:before{content:""}
+.devicon-azure-plain.colored{color:#0089d6}
+.devicon-bash-plain.colored{color:#293138}
+.devicon-github-original.colored{color:#181616}
+.devicon-linux-plain.colored{color:#000}
+.devicon-powershell-plain.colored{color:#1e2a3a}
+.devicon-python-plain.colored{color:#ffd845}
+.devicon-windows8-original.colored{color:#00adef}
