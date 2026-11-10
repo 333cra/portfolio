@@ -6,17 +6,12 @@
 
 /* ---------- Bases communes ---------- */
 .pf-sec { position: relative; padding-block: clamp(80px, 10vw, 140px); }
-.pf-kicker {
-  display: inline-flex; align-items: center; gap: 10px;
-  font: 500 13px/1 var(--mono); color: var(--accent); letter-spacing: .02em;
-}
-.pf-kicker::before { content: ""; width: 26px; height: 1.5px; background: var(--grad); }
+.pf-sec--flush { padding-top: 0; }
+.pf-sec--top { padding-top: clamp(48px, 6vw, 80px); }
 .pf-title {
-  margin-top: 18px;
-  font-size: clamp(2.2rem, 1.2rem + 3.6vw, 4.4rem);
-  line-height: .98; letter-spacing: -0.05em; font-weight: 750;
+  font-size: clamp(1.9rem, 1.3rem + 2.2vw, 3.1rem);
+  line-height: 1.02; letter-spacing: -0.045em; font-weight: 750;
 }
-.pf-title em { font-style: normal; color: var(--ink-mute); }
 .pf-lead { margin-top: 20px; max-width: 58ch; color: var(--ink-dim); font-size: clamp(1.02rem, .96rem + .3vw, 1.18rem); line-height: 1.6; }
 .pf-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
 
@@ -26,158 +21,95 @@
   background: var(--bg-2); border: 1px solid var(--line); color: var(--ink-dim);
 }
 
-/* Apparition au défilement */
-.js .rv { opacity: 0; transform: translateY(22px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: calc(var(--d, 0) * 90ms); }
-.js .rv.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } }
-
-/* ---------- 1. Qui je suis : texte + terminal ---------- */
-.pf-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
-.pf-intro .pf-text p { margin-top: 16px; color: var(--ink-dim); font-size: clamp(1.02rem, .96rem + .3vw, 1.16rem); line-height: 1.65; }
+/* ---------- 1. Qui je suis : titre à gauche, texte à droite ---------- */
+.pf-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: clamp(24px, 5vw, 80px); align-items: start; }
+.pf-intro .pf-text { max-width: 62ch; }
+.pf-intro .pf-text p { color: var(--ink-dim); font-size: clamp(1.02rem, .96rem + .3vw, 1.16rem); line-height: 1.65; }
+.pf-intro .pf-text p + p { margin-top: 16px; }
 .pf-intro .pf-text strong { color: var(--ink); font-weight: 600; }
 
-.pf-term {
-  border-radius: 16px; overflow: hidden;
-  background: #070A0F; border: 1px solid var(--line-2);
-  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8);
-}
-.pf-term-bar { display: flex; align-items: center; gap: 7px; padding: 12px 14px; background: var(--panel); border-bottom: 1px solid var(--line); }
-.pf-term-bar i { width: 11px; height: 11px; border-radius: 50%; }
-.pf-term-bar i:nth-child(1) { background: #E5534B; }
-.pf-term-bar i:nth-child(2) { background: #D29922; }
-.pf-term-bar i:nth-child(3) { background: #3FB950; }
-.pf-term-bar span { margin-left: 10px; font: 500 12px/1 var(--mono); color: var(--ink-mute); }
-.pf-term pre {
-  margin: 0; padding: 22px 22px 26px; overflow-x: auto;
-  font: 400 14px/1.75 var(--mono); color: var(--ink-dim); white-space: pre;
-}
-.pf-term .p { color: var(--green); }
-.pf-term .k { color: var(--ink-mute); }
-.pf-term .v { color: var(--ink); }
-.pf-term .cur { display: inline-block; width: .6em; height: 1.1em; vertical-align: -.2em; background: var(--green); }
-@media (prefers-reduced-motion: no-preference) { .pf-term .cur { animation: pf-blink 1.1s steps(1) infinite; } }
-@keyframes pf-blink { 50% { opacity: 0; } }
-
-/* ---------- 2. Compétences : grille bento ---------- */
-.pf-bento { margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+/* ---------- 2. Compétences : six tuiles ---------- */
+.pf-bento { margin-top: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .pf-tile {
-  --mx: 50%; --my: 0%;
-  position: relative; overflow: hidden; isolation: isolate;
   padding: clamp(22px, 2.4vw, 32px); border-radius: 20px;
   background: var(--panel); border: 1px solid var(--line);
-  transition: border-color .4s var(--ease), transform .5s var(--ease);
 }
-.pf-tile::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .4s var(--ease);
-  background: radial-gradient(420px circle at var(--mx) var(--my), color-mix(in srgb, var(--green) 16%, transparent), transparent 60%);
-}
-.pf-tile:hover { border-color: var(--line-2); transform: translateY(-3px); }
-.pf-tile:hover::before { opacity: 1; }
-.pf-tile.wide { grid-column: span 2; }
 .pf-tile .ico { font-size: 30px; color: var(--accent); }
 .pf-tile h3 { margin-top: 18px; font-size: clamp(1.3rem, 1.1rem + .7vw, 1.75rem); letter-spacing: -0.035em; line-height: 1.05; }
 .pf-tile p { margin-top: 10px; color: var(--ink-dim); line-height: 1.6; font-size: 15.5px; }
-.pf-tile .num { position: absolute; top: 18px; right: 20px; font: 500 12px/1 var(--mono); color: var(--ink-mute); }
 
-/* ---------- 3. Outils : touches de clavier ---------- */
-.pf-keys-group { margin-top: 34px; }
+/* ---------- 3. Outils ---------- */
+.pf-keys-group { margin-top: 30px; }
 .pf-keys-group h3 { font: 500 12.5px/1 var(--mono); color: var(--ink-mute); letter-spacing: .04em; text-transform: uppercase; }
-.pf-keys { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; padding: 0; list-style: none; }
+.pf-keys { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; padding: 0; list-style: none; }
 .pf-key {
   display: inline-flex; align-items: center; gap: 10px;
-  padding: 12px 16px 14px; border-radius: 12px;
-  background: linear-gradient(180deg, var(--panel-2), var(--panel));
-  border: 1px solid var(--line-2);
-  box-shadow: 0 4px 0 0 #06080C, 0 6px 14px -6px rgba(0, 0, 0, .7);
+  padding: 11px 15px; border-radius: 10px;
+  background: var(--panel); border: 1px solid var(--line);
   font-weight: 600; font-size: 15.5px; color: var(--ink);
-  transition: transform .15s ease, box-shadow .15s ease;
 }
 .pf-key i { font-size: 20px; color: var(--ink-dim); }
-.pf-key:hover { transform: translateY(3px); box-shadow: 0 1px 0 0 #06080C, 0 2px 6px -4px rgba(0, 0, 0, .7); }
 
-/* ---------- 4. Réalisations : carrousel ---------- */
-.pf-rail-nav { display: flex; gap: 10px; }
-.pf-round {
-  width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
-  background: transparent; border: 1px solid var(--line-2); color: var(--ink); font-size: 20px; cursor: pointer;
-  transition: background .3s var(--ease), border-color .3s var(--ease);
-}
-.pf-round:hover { background: var(--panel-2); border-color: var(--accent); }
-.pf-round:disabled { opacity: .35; cursor: default; }
-.pf-rail {
-  margin-top: clamp(32px, 4vw, 48px);
-  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(280px, 380px); gap: 16px;
-  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
-  padding: 4px var(--gutter) 22px; margin-inline: calc(var(--gutter) * -1);
-  scrollbar-width: thin; scrollbar-color: var(--line-2) transparent;
-}
+/* ---------- 4. Réalisations : les trois mises en avant ---------- */
+.pf-feat { margin-top: clamp(32px, 4vw, 48px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .pf-shot {
-  scroll-snap-align: start; position: relative;
-  display: flex; flex-direction: column; min-height: 400px;
+  position: relative;
+  display: flex; flex-direction: column; align-items: flex-start; min-height: 300px;
   padding: 28px; border-radius: 22px; background: var(--panel); border: 1px solid var(--line);
   color: inherit; text-decoration: none; overflow: hidden;
 }
-.pf-shot::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--grad); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
-.pf-shot:hover::after { transform: scaleX(1); }
-.pf-shot .big {
-  font: 750 clamp(4rem, 3rem + 3vw, 6rem)/.8 var(--display); letter-spacing: -0.06em;
-  color: transparent; -webkit-text-stroke: 1px var(--line-2);
-}
-.pf-shot .cat { margin-top: 26px; font: 500 12px/1 var(--mono); color: var(--accent); }
-.pf-shot h3 { margin-top: 12px; font-size: 1.55rem; line-height: 1.08; letter-spacing: -0.035em; }
+.pf-shot { transition: border-color .3s var(--ease); }
+.pf-shot:hover { border-color: var(--accent); }
+.pf-shot .pf-badge { margin-top: 0; }
+.pf-shot h3 { margin-top: 14px; font-size: 1.55rem; line-height: 1.08; letter-spacing: -0.035em; }
 .pf-shot p { margin-top: 12px; color: var(--ink-dim); line-height: 1.6; font-size: 15.5px; }
 .pf-shot .go { margin-top: auto; padding-top: 22px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--ink); }
 .pf-shot .go i { transition: transform .4s var(--ease); }
 .pf-shot:hover .go i { transform: translateX(5px); }
 
 /* ---------- 5. Parcours : frise ---------- */
-.pf-timeline { position: relative; margin-top: clamp(40px, 5vw, 64px); padding: 0; list-style: none; }
+/* Les dates à gauche, le trait, puis les étapes : de la plus récente à la plus ancienne */
+.pf-timeline { --when: 210px; position: relative; max-width: 940px; margin-top: clamp(40px, 5vw, 64px); padding: 0; list-style: none; }
 .pf-timeline::before {
-  content: ""; position: absolute; top: 6px; bottom: 6px; left: 50%; width: 2px; transform: translateX(-1px);
-  background: linear-gradient(180deg, var(--blue), var(--green)); opacity: .7;
+  content: ""; position: absolute; top: 6px; bottom: 6px; left: calc(var(--when) + 32px); width: 2px; transform: translateX(-1px);
+  background: var(--line-2);
 }
-.pf-step { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding-block: 18px; }
+.pf-step { position: relative; display: grid; grid-template-columns: var(--when) minmax(0, 1fr); gap: 64px; padding-block: 12px; }
 .pf-step .when { justify-self: end; text-align: right; font: 500 14px/1.4 var(--mono); color: var(--green); padding-top: 22px; }
 .pf-step .what { padding: 20px 24px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
-.pf-step:nth-child(even) .when { order: 2; justify-self: start; text-align: left; }
-.pf-step:nth-child(even) .what { order: 1; }
 .pf-step::after {
-  content: ""; position: absolute; left: 50%; top: 40px; width: 14px; height: 14px; transform: translate(-50%, -50%);
+  content: ""; position: absolute; left: calc(var(--when) + 32px); top: 34px; width: 14px; height: 14px; transform: translate(-50%, -50%);
   border-radius: 50%; background: var(--bg); border: 2px solid var(--green);
-  box-shadow: 0 0 0 6px color-mix(in srgb, var(--green) 15%, transparent);
 }
 .pf-step h3 { font-size: 1.25rem; letter-spacing: -0.02em; }
 .pf-step p { margin-top: 6px; color: var(--ink-dim); font-size: 15.5px; line-height: 1.55; }
 .pf-step .tag { display: inline-block; margin-top: 12px; font: 500 11.5px/1 var(--mono); padding: 6px 9px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--ink-dim); }
 
 /* ---------- 6. Façon de travailler ---------- */
-.pf-ways { margin-top: clamp(40px, 5vw, 56px); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line-2); padding: 0; list-style: none; counter-reset: w; }
-.pf-ways li { padding: 26px 22px 6px 0; counter-increment: w; }
-.pf-ways li::before { content: "0" counter(w); display: block; font: 500 12px/1 var(--mono); color: var(--accent); margin-bottom: 14px; }
+.pf-ways { margin-top: clamp(40px, 5vw, 56px); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line-2); padding: 0; list-style: none; }
+.pf-ways li { padding: 24px 22px 6px 0; }
 .pf-ways b { display: block; font-size: 1.12rem; letter-spacing: -0.02em; }
 .pf-ways span { display: block; margin-top: 8px; color: var(--ink-dim); font-size: 15px; line-height: 1.55; }
 
 /* ---------- 7. Contact ---------- */
 .pf-contact {
-  position: relative; border-radius: 28px; padding: clamp(32px, 5vw, 72px);
-  background:
-    radial-gradient(600px 300px at 0% 0%, color-mix(in srgb, var(--blue) 16%, transparent), transparent 70%),
-    radial-gradient(600px 300px at 100% 100%, color-mix(in srgb, var(--green) 14%, transparent), transparent 70%),
-    var(--panel);
-  border: 1px solid var(--line-2);
+  border-radius: 24px; padding: clamp(28px, 4vw, 56px);
+  background: var(--panel); border: 1px solid var(--line);
 }
 .pf-contact .pf-title { max-width: 16ch; }
-.pf-cts { margin-top: clamp(32px, 4vw, 48px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.pf-cts { margin-top: clamp(32px, 4vw, 48px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .pf-ct {
-  display: flex; align-items: center; gap: 16px; padding: 20px; border-radius: 16px;
-  background: var(--bg-2); border: 1px solid var(--line); color: var(--ink); text-decoration: none;
-  transition: border-color .3s var(--ease), transform .4s var(--ease);
+  position: relative; display: flex; align-items: center; gap: 16px; padding: 20px; border-radius: 16px;
+  background: var(--bg-2); border: 1px solid var(--line); color: var(--ink);
+  transition: border-color .3s var(--ease);
 }
-.pf-ct:hover { border-color: var(--accent); transform: translateY(-2px); }
+.pf-ct:hover { border-color: var(--accent); }
 .pf-ct i { font-size: 24px; color: var(--accent); }
 .pf-ct small { display: block; font: 500 11.5px/1 var(--mono); color: var(--ink-mute); margin-bottom: 6px; }
+.pf-ct a { text-decoration: none; }
+.pf-ct a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .pf-ct b { font-weight: 600; font-size: 15.5px; overflow-wrap: anywhere; }
-.pf-copy { margin-left: auto; flex: none; font: 500 11.5px/1 var(--mono); padding: 7px 9px; border-radius: 8px; background: transparent; border: 1px solid var(--line-2); color: var(--ink-dim); cursor: pointer; }
+.pf-copy { position: relative; z-index: 1; margin-left: auto; flex: none; font: 500 11.5px/1 var(--mono); padding: 9px 11px; border-radius: 8px; background: var(--bg-2); border: 1px solid var(--line-2); color: var(--ink-dim); cursor: pointer; }
 .pf-copy:hover { color: var(--ink); border-color: var(--accent); }
 
 /* ---------- Pied de page ---------- */
@@ -199,7 +131,6 @@
 .pf-crumbs a { color: var(--ink-dim); text-decoration: none; }
 .pf-crumbs a:hover { color: var(--ink); }
 .pf-banner h1 { margin-top: 18px; font-size: clamp(2.6rem, 1.4rem + 4.6vw, 5.6rem); line-height: .95; letter-spacing: -0.055em; font-weight: 750; max-width: 16ch; }
-.pf-banner h1 em { font-style: normal; color: var(--green); }
 .pf-banner p { margin-top: 18px; max-width: 60ch; color: var(--ink-dim); font-size: clamp(1.02rem, .96rem + .3vw, 1.18rem); line-height: 1.6; }
 
 /* Réalisations : filtres + cartes */
@@ -222,7 +153,15 @@
 .pf-badge.free { color: oklch(74% .12 300); border-color: color-mix(in srgb, oklch(74% .12 300) 45%, var(--line-2)); }
 .pf-card h2 { margin-top: 22px; font-size: clamp(1.4rem, 1.2rem + .7vw, 1.9rem); line-height: 1.05; letter-spacing: -0.04em; }
 .pf-card p { margin-top: 12px; color: var(--ink-dim); line-height: 1.65; }
-.pf-card .go { margin-top: 20px; font-weight: 600; color: var(--ink); }
+/* Les étiquettes restent en bas : les cartes d'une même ligne s'alignent */
+.pf-card .pf-chips { margin-top: auto; padding-top: 20px; }
+.pf-card .go { margin-top: 20px; font-weight: 600; color: var(--ink); text-decoration: none; }
+/* Quand une carte a une fiche, toute la carte est cliquable */
+.pf-card .go::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.pf-card:has(.go) { transition: border-color .3s var(--ease); }
+.pf-card:has(.go):hover { border-color: var(--accent); }
+.pf-card { scroll-margin-top: 100px; }
+.pf-card:target { border-color: var(--green); box-shadow: 0 0 0 4px color-mix(in srgb, var(--green) 14%, transparent); }
 
 /* Fiche réalisation et pages de texte : encadré collant + contenu */
 .pf-layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
@@ -244,14 +183,19 @@
 .pf-doc p, .pf-doc li { color: var(--ink-dim); line-height: 1.75; font-size: clamp(1rem, .97rem + .2vw, 1.1rem); }
 .pf-doc p { margin-top: 14px; }
 .pf-doc a { color: var(--ink); }
-.pf-doc ul { margin-top: 14px; padding-left: 20px; }
+.pf-doc > p, .pf-doc > ul { max-width: 72ch; }
+.pf-doc ul { margin-top: 14px; }
+.pf-doc ul:not(.pf-chips) { padding-left: 22px; list-style: disc; }
+.pf-doc ul:not(.pf-chips) li::marker { color: var(--green); }
+.pf-doc ul:not(.pf-chips) li + li { margin-top: 6px; }
+.pf-doc .pf-updated { margin-top: 48px; font: 400 13px/1.5 var(--mono); color: var(--ink-mute); }
 .pf-doc code { font: 400 .9em var(--mono); padding: 2px 6px; border-radius: 6px; background: var(--panel-2); color: var(--ink); }
 
 .pf-steps { margin-top: 20px; padding: 0; list-style: none; counter-reset: s; }
 .pf-steps li { position: relative; padding: 2px 0 22px 52px; counter-increment: s; }
 .pf-steps li::before {
   content: counter(s); position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 10px;
-  display: grid; place-items: center; font: 600 13px/1 var(--mono); color: var(--bg); background: var(--grad);
+  display: grid; place-items: center; font: 600 13px/1 var(--mono); color: var(--ink); background: var(--panel-2); border: 1px solid var(--line-2);
 }
 .pf-steps li::after { content: ""; position: absolute; left: 15px; top: 38px; bottom: 6px; width: 2px; background: var(--line-2); }
 .pf-steps li:last-child::after { display: none; }
@@ -274,6 +218,8 @@
 @media (max-width: 1000px) {
   .pf-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pf-ways { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pf-feat { grid-template-columns: 1fr; }
+  .pf-shot { min-height: 0; }
   .pf-cts { grid-template-columns: 1fr; }
   .pf-layout { grid-template-columns: 1fr; }
   .pf-aside { position: static; }
@@ -281,21 +227,18 @@
 @media (max-width: 760px) {
   .pf-intro { grid-template-columns: 1fr; }
   .pf-bento { grid-template-columns: 1fr; }
-  .pf-tile.wide { grid-column: auto; }
   .pf-grid { grid-template-columns: 1fr; }
   .pf-timeline::before { left: 7px; }
   .pf-step { grid-template-columns: 1fr; gap: 8px; padding-left: 34px; }
-  .pf-step .when, .pf-step:nth-child(even) .when { order: 0; justify-self: start; text-align: left; padding-top: 0; }
-  .pf-step:nth-child(even) .what { order: 0; }
-  .pf-step::after { left: 8px; top: 26px; }
+  .pf-step .when { justify-self: start; text-align: left; padding-top: 0; }
+  .pf-step::after { left: 8px; top: 22px; }
   .pf-ways { grid-template-columns: 1fr; }
-  .pf-term pre { font-size: 12.5px; padding: 18px; }
-}
-/* Mon nom est plus long que celui de mon site pro : sur petit écran on garde seulement le bouton Menu */
-@media (max-width: 440px) {
-  .head-right > a.pill-btn { display: none; }
+  .pf-ct { flex-wrap: wrap; }
 }
 
 /* Étiquettes dans une page de texte : pas de retrait ni de grande police */
 .pf-doc .pf-chips { padding-left: 0; }
 .pf-doc .pf-chips li { font-size: 12px; line-height: 1; }
+
+/* Sur téléphone l'onde passe derrière le texte : on l'atténue pour qu'il reste lisible */
+@media (max-width: 760px) { .hero #wave { opacity: .45; } }

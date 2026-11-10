@@ -16,7 +16,7 @@ La bannière avec l'onde animée reprend celle de mon site professionnel. Le res
 - `css/vendor.css` : polices et icônes
 - `css/banniere.css` : bannière avec l'onde, en-tête et menu (repris de mon site pro)
 - `css/portfolio.css` : tout le reste du design du portfolio
-- `js/main.js` : onde, menu, carrousel, filtres des réalisations, copie du mail
+- `js/main.js` : onde, menu, filtres des réalisations, copie du mail
 - `fonts/` : Bricolage Grotesque et JetBrains Mono (licence SIL OFL)
 - `vendor/` : icônes Phosphor et Devicon (licence MIT)
 - `img/` : logo, icône et mes captures

@@ -1,11 +1,10 @@
 /* Script du portfolio.
    L'onde de la bannière et le menu plein écran sont repris de mon site pro.
-   Le reste (carrousel, filtres, copie du mail, effet des tuiles) est propre au portfolio. */
+   Le reste (filtres des réalisations, copie du mail) est propre au portfolio. */
 (function () {
   "use strict";
   document.documentElement.classList.add("js");
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var finePointer = matchMedia("(pointer: fine)").matches;
 
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
@@ -67,26 +66,6 @@
     }
   }
 
-  /* ---------- Apparition des blocs au défilement ---------- */
-  var rv = document.querySelectorAll(".rv");
-  if ("IntersectionObserver" in window && !reduce) {
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
-    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-    rv.forEach(function (el) { io.observe(el); });
-  } else { rv.forEach(function (el) { el.classList.add("in"); }); }
-
-  /* ---------- Boutons magnétiques (souris uniquement) ---------- */
-  if (finePointer && !reduce) {
-    document.querySelectorAll(".magnetic").forEach(function (b) {
-      b.addEventListener("pointermove", function (e) {
-        var r = b.getBoundingClientRect();
-        b.style.transform = "translate(" + (e.clientX - r.left - r.width / 2) * 0.18 + "px," + (e.clientY - r.top - r.height / 2) * 0.3 + "px)";
-      });
-      b.addEventListener("pointerleave", function () { b.style.transform = ""; });
-    });
-  }
-
   /* ---------- Menu plein écran, repris de mon site pro ---------- */
   var menu = document.getElementById("menu"), mOpen = document.getElementById("menu-open"), mClose = document.getElementById("menu-close");
   var setMenu = function (open) {
@@ -109,33 +88,6 @@
     menu.querySelectorAll("a").forEach(function (a) {
       a.addEventListener("click", function () { if (menu.classList.contains("open")) setMenu(false); });
     });
-  }
-
-  /* ---------- Tuiles des compétences : halo qui suit la souris ---------- */
-  if (finePointer) {
-    document.querySelectorAll(".pf-tile").forEach(function (t) {
-      t.addEventListener("pointermove", function (e) {
-        var r = t.getBoundingClientRect();
-        t.style.setProperty("--mx", (e.clientX - r.left) + "px");
-        t.style.setProperty("--my", (e.clientY - r.top) + "px");
-      });
-    });
-  }
-
-  /* ---------- Carrousel des réalisations ---------- */
-  var rail = document.querySelector(".pf-rail");
-  var prev = document.querySelector("[data-rail-prev]"), next = document.querySelector("[data-rail-next]");
-  if (rail && prev && next) {
-    var step = function () { var c = rail.querySelector(".pf-shot"); return c ? c.getBoundingClientRect().width + 16 : 300; };
-    var update = function () {
-      prev.disabled = rail.scrollLeft <= 4;
-      next.disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 4;
-    };
-    prev.addEventListener("click", function () { rail.scrollBy({ left: -step(), behavior: reduce ? "auto" : "smooth" }); });
-    next.addEventListener("click", function () { rail.scrollBy({ left: step(), behavior: reduce ? "auto" : "smooth" }); });
-    rail.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-    update();
   }
 
   /* ---------- Filtres de la page réalisations ---------- */
