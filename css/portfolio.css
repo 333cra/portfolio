@@ -153,6 +153,7 @@
 .pf-badge.free { color: oklch(74% .12 300); border-color: color-mix(in srgb, oklch(74% .12 300) 45%, var(--line-2)); }
 .pf-card h2 { margin-top: 22px; font-size: clamp(1.4rem, 1.2rem + .7vw, 1.9rem); line-height: 1.05; letter-spacing: -0.04em; }
 .pf-card p { margin-top: 12px; color: var(--ink-dim); line-height: 1.65; }
+.pf-card .pf-note { font: 400 12.5px/1.5 var(--mono); color: var(--ink-mute); }
 /* Les étiquettes restent en bas : les cartes d'une même ligne s'alignent */
 .pf-card .pf-chips { margin-top: auto; padding-top: 20px; }
 .pf-card .go { margin-top: 20px; font-weight: 600; color: var(--ink); text-decoration: none; }

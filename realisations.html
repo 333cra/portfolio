@@ -53,7 +53,7 @@
   <div class="wrap">
     <p class="pf-crumbs"><a href="index.html">Accueil</a> / Réalisations</p>
     <h1 id="page-title">Mes réalisations</h1>
-    <p>Des projets faits en cours, en alternance et en freelance. Pour les missions chez des clients, je ne donne pas leur nom.</p>
+    <p>Des projets faits en cours, en alternance et en freelance. Je ne donne ni le nom de mes clients ni celui de mon employeur, et les détails sensibles sont retirés.</p>
   </div>
 </section>
 
@@ -61,7 +61,7 @@
   <div class="wrap">
     <div class="pf-filters" role="group" aria-label="Filtrer les réalisations">
       <button type="button" class="pf-filter" data-filter="tout" aria-pressed="true">Tout</button>
-      <button type="button" class="pf-filter" data-filter="bts" aria-pressed="false">BTS SIO</button>
+      <button type="button" class="pf-filter" data-filter="bts" aria-pressed="false">Formation</button>
       <button type="button" class="pf-filter" data-filter="pro" aria-pressed="false">En alternance</button>
       <button type="button" class="pf-filter" data-filter="free" aria-pressed="false">Freelance</button>
     </div>
@@ -79,6 +79,13 @@
         <p>Écrit en HTML, CSS et un peu de JavaScript. La bannière reprend l'onde de mon site pro. Versionné avec Git et publié sur GitHub Pages.</p>
         <ul class="pf-chips" translate="no"><li>HTML</li><li>CSS</li><li>Git</li><li>GitHub Pages</li></ul>
         <a class="go" href="https://github.com/333cra/portfolio" target="_blank" rel="noopener">Voir le code →</a>
+      </article>
+      <article class="pf-card" data-cat="bts">
+        <div class="top"><i class="ph-light ph-code" aria-hidden="true"></i><span class="pf-badge bts">Projet d'école</span></div>
+        <h2>BetHub : une application web de paris, en équipe</h2>
+        <p>Un projet à trois : une application web de paris en PHP et MySQL, avec inscription, captcha, classement et un espace d'administration (utilisateurs, paris, cotes, journaux, bannissements). On l'a rendue avec un dossier technique, une analyse des risques et un rapport de validation W3C.</p>
+        <p class="pf-note">Code et dossiers non publiés : c'est un travail d'équipe.</p>
+        <ul class="pf-chips" translate="no"><li>PHP</li><li>MySQL</li><li>Travail d'équipe</li><li>W3C</li></ul>
       </article>
       <article class="pf-card" data-cat="pro" id="intune">
         <div class="top"><i class="ph-light ph-device-mobile" aria-hidden="true"></i><span class="pf-badge pro">En alternance</span></div>
@@ -104,6 +111,34 @@
         <p>Un utilisateur ne retrouvait plus ses mails avec pièce jointe dans le nouvel Outlook. J'ai vérifié côté serveur avec le suivi des messages, retrouvé son poste dans Defender, puis lancé à distance un script Intune qui remet à zéro le cache d'Outlook sans rien supprimer. Le script a bien tourné, j'attends le retour de l'utilisateur pour confirmer.</p>
         <ul class="pf-chips" translate="no"><li>Exchange Online</li><li>Defender</li><li>Intune</li><li>Graph</li></ul>
       </article>
+      <article class="pf-card" data-cat="pro">
+        <div class="top"><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span class="pf-badge pro">En alternance</span></div>
+        <h2>Réponse à une attaque de phishing par « device code »</h2>
+        <p>Un faux appel d'offres, envoyé depuis la boîte piratée d'un partenaire, a piégé plusieurs comptes en deux vagues. Avec Defender et Entra ID, j'ai désactivé les appareils de l'attaquant, bloqué l'expéditeur et le lien, fait supprimer environ 200 copies du mail et réinitialisé les mots de passe. Une règle d'accès conditionnel bloque maintenant cette méthode de connexion. Le lendemain, j'ai vérifié dans les journaux que l'attaquant n'avait rien pu faire avec ces comptes.</p>
+        <p class="pf-note">Détails et documents internes : non publiés, par confidentialité.</p>
+        <ul class="pf-chips" translate="no"><li>Defender</li><li>Entra ID</li><li>Accès conditionnel</li><li>Réponse à incident</li></ul>
+      </article>
+      <article class="pf-card" data-cat="pro">
+        <div class="top"><i class="ph-light ph-magnifying-glass" aria-hidden="true"></i><span class="pf-badge pro">En alternance</span></div>
+        <h2>Test d'intrusion interne autorisé</h2>
+        <p>Avec un mandat écrit de mon responsable, j'ai testé ce qu'un attaquant pourrait faire à partir d'un compte utilisateur standard. Le périmètre était limité à deux serveurs et les règles étaient écrites à l'avance : rien de destructif, et tout ce que je crée est marqué puis supprimé à la fin. J'ai remis un rapport avec mes constats et les corrections à faire.</p>
+        <p class="pf-note">Détails et documents internes : non publiés, par confidentialité.</p>
+        <ul class="pf-chips" translate="no"><li>Active Directory</li><li>Règles d'engagement</li><li>Rapport</li></ul>
+      </article>
+      <article class="pf-card" data-cat="pro">
+        <div class="top"><i class="ph-light ph-arrows-clockwise" aria-hidden="true"></i><span class="pf-badge pro">En alternance</span></div>
+        <h2>Script de sauvegarde avant la réinitialisation d'un poste</h2>
+        <p>Avant de réinitialiser un poste pour le passer sous Intune, ce script PowerShell recopie dans OneDrive ce que l'utilisateur risquerait de perdre : ses fichiers rangés hors OneDrive, ses signatures Outlook, ses favoris, la liste de ses imprimantes et de ses lecteurs réseau. Il ne recopie que ce qui a changé et commence par un simple rapport, sans rien copier. Je l'ai testé dans Windows Sandbox.</p>
+        <p class="pf-note">Script non publié.</p>
+        <ul class="pf-chips" translate="no"><li>PowerShell</li><li>Intune</li><li>OneDrive</li><li>Windows Sandbox</li></ul>
+      </article>
+      <article class="pf-card" data-cat="pro">
+        <div class="top"><i class="ph-light ph-timer" aria-hidden="true"></i><span class="pf-badge pro">En alternance</span></div>
+        <h2>Installation Autopilot trop lente : la cause trouvée</h2>
+        <p>Les nouveaux postes restaient très longtemps sur l'écran « Configuration de l'entreprise ». En lisant la configuration avec Microsoft Graph, j'ai vu que cet écran attendait la fin de l'installation de la suite bureautique, la plus lourde de toutes. Je lui ai fait attendre une petite application à la place et j'ai retiré une installation en double. Le correctif est validé en production.</p>
+        <p class="pf-note">Détails et documents internes : non publiés, par confidentialité.</p>
+        <ul class="pf-chips" translate="no"><li>Autopilot</li><li>Intune</li><li>Microsoft Graph</li></ul>
+      </article>
       <article class="pf-card" data-cat="free">
         <div class="top"><i class="ph-light ph-headset" aria-hidden="true"></i><span class="pf-badge free">Freelance</span></div>
         <h2>Informatique d'une PME de 20 personnes</h2>
@@ -127,6 +162,27 @@
         <h2>Automatisation de tâches d'une TPE</h2>
         <p>Sept tâches répétitives automatisées en Python (veille, relève de mails, rappels d'échéances), avec des tests. Rien d'important ne part sans validation humaine.</p>
         <ul class="pf-chips" translate="no"><li>Python</li><li>Tests</li><li>RGPD</li></ul>
+      </article>
+      <article class="pf-card" data-cat="free">
+        <div class="top"><i class="ph-light ph-shield-checkered" aria-hidden="true"></i><span class="pf-badge free">Freelance</span></div>
+        <h2>Audit de sécurité d'un serveur web en production</h2>
+        <p>J'ai audité un serveur Debian qui héberge un site et une API, de l'extérieur puis de l'intérieur. J'ai ensuite tout corrigé avec un script : l'accès direct par l'adresse IP est refusé, le port 80 ne fait plus que rediriger vers HTTPS, les en-têtes de sécurité sont complétés et les pages d'administration inutiles sont désactivées. Le script sauvegarde la configuration, la teste, et la restaure tout seul si le test échoue.</p>
+        <p class="pf-note">Script non publié : le serveur est en production.</p>
+        <ul class="pf-chips" translate="no"><li>Debian</li><li>Apache</li><li>HTTPS</li><li>DMARC</li></ul>
+      </article>
+      <article class="pf-card" data-cat="free">
+        <div class="top"><i class="ph-light ph-lock-key" aria-hidden="true"></i><span class="pf-badge free">Freelance</span></div>
+        <h2>Une faille qui menait à root, trouvée et corrigée</h2>
+        <p>En relisant le code d'un back-office PHP, j'ai vu que le compte du serveur web pouvait modifier des scripts lancés ensuite par root. J'ai déplacé ces scripts dans un dossier protégé et je les fais tourner avec des minuteurs systemd aux droits limités. J'ai aussi ajouté une protection contre les essais de mots de passe en série et durci les sessions.</p>
+        <p class="pf-note">Code non publié : l'outil est en production.</p>
+        <ul class="pf-chips" translate="no"><li>PHP</li><li>systemd</li><li>Moindre privilège</li><li>TOTP</li></ul>
+      </article>
+      <article class="pf-card" data-cat="free">
+        <div class="top"><i class="ph-light ph-code" aria-hidden="true"></i><span class="pf-badge free">Freelance</span></div>
+        <h2>API de vérification des numéros de TVA</h2>
+        <p>Une API en Python qui interroge le service VIES de la Commission européenne pour vérifier un numéro de TVA. Elle contrôle d'abord le format du numéro pays par pays, garde les réponses en cache et arrête d'interroger VIES quand il ne répond plus. Après une relecture de sécurité, j'ai déployé 11 correctifs et les 86 tests passent.</p>
+        <p class="pf-note">Code non publié : l'API est en production.</p>
+        <ul class="pf-chips" translate="no"><li>Python</li><li>API</li><li>Tests</li><li>Cache</li></ul>
       </article>
     </div>
   </div>
